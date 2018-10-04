@@ -1,0 +1,46 @@
+<div class="container">
+  <header>
+    <h1>TASKLIST</h1>
+  </header>
+
+  <section class="center">
+    <section class="task-options">
+      <ul>
+        <li>
+          <%= link_to "Add Task", new_task_path %>
+        </li>
+        <li>
+          <%= link_to "All Tasks", tasks_path %>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="center">
+    <section class="task-list">
+      <h2>Your Tasks</h2>
+      <ol>
+        <% @tasks.each do |item| %>
+          <li>
+            <% if item.status == "Mark Complete" %>
+              <%= link_to item.name, task_path(item.id), class: "bold clear" %>
+            <% else %>
+              <%= link_to item.name, task_path(item.id), class: "bold line-through grey" %>
+            <% end %>
+            <ul>
+              <li>
+                <%= link_to item.status, complete_task_path(item.id), method: :patch %>
+              </li>
+              <li>
+                <%= link_to "Edit", edit_task_path(item.id) %>
+              </li>
+              <li>
+                <%= link_to "Delete", task_path(item.id), method: :delete, data: {confirm: "Are you sure?"} %>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+      </ol>
+    </section>
+  </section>
+</div>

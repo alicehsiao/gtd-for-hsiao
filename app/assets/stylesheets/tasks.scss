@@ -1,0 +1,102 @@
+// Place all the styles related to the Tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin-left: 2rem;
+}
+
+.container header {
+  grid-column: span 2;
+  margin: 4rem;
+}
+
+.container .center {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin: 0;
+}
+.container .task-options {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .task-options ul li {
+  border: 1px black solid;
+  border-radius: 10%;
+  border-width: 0.3rem;
+  width: 70%;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  list-style-type: none;
+}
+
+.container .task-list {
+  grid-column: 2 / 3;
+  border: 1px black solid;
+  border-radius: 7%;
+  width: 50%;
+  border-width: 0.1rem;
+  padding: 2rem;
+  padding-bottom: 0;
+  max-height: 80%;
+  line-height: 1rem;
+}
+
+.container .task-list ul {
+  padding: 0;
+  padding-bottom: 2rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.container .task-list ul li {
+  display: inline-block;
+  list-style-type: none;
+  text-align: left;
+}
+
+.container .task-list h2 {
+  text-align: center;
+}
+
+.container .task-list ul li:nth-child(2)::before, .container .task-list ul li:last-of-type::before{
+  content: "|"
+}
+
+article {
+  background-color: tomato;
+  padding: 5rem;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+article p a {
+  padding-right: 1rem;
+}
+
+.center .task-list ol li .line-through {
+  text-decoration: line-through;
+}
+
+.center .task-list ol li .clear {
+  text-decoration: none;
+  color: inherit;
+}
+
+.center .task-list ol li .grey {
+  color: #D3D3D3;
+}
+
+article a:visited {
+  color: white;
+}
